@@ -1,7 +1,20 @@
 {
+  
   "specVersion": "1.0",
   "host": {
     "displayName": "Pawfy"
   },
-  "entries": []
+  "entries": [
+    {
+      "identifier": "urn:air:pawfy:tools:metabolic-complex",
+      "displayName": "Pawfy Metabolic Complex Assistant",
+      "type": "application/a2a-agent-card+json",
+      "url": "https://pawfy-metabolic-complex-high-performance-pdp-chal-1.ai.studio/.well-known/agent-card.json",
+      "representativeQueries": [
+        "Calculate dog metabolic chew dosage",
+        "Check GLP-1 chews for overweight dogs",
+        "Pawfy metabolic complex feeding instructions"
+      ]
+    }
+  ]
 }
