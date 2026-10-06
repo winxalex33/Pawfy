@@ -593,7 +593,7 @@ export class AtfSection {
   }
 
   getMainHeroSrcset(src: string): string {
-    return `${optimizeShopifyImage(src, 360)} 360w, ${optimizeShopifyImage(src, 480)} 480w, ${optimizeShopifyImage(src, 540)} 540w, ${optimizeShopifyImage(src, 640)} 640w`;
+    return `${optimizeShopifyImage(src, 360)} 360w, ${optimizeShopifyImage(src, 480)} 480w, ${optimizeShopifyImage(src, 540)} 540w, ${optimizeShopifyImage(src, 581)} 581w`;
   }
 
   prevSlide() {
