@@ -159,9 +159,9 @@ import { PdpState } from '../services/pdp-state';
                   </table>
                 </div>
                 <div class="bg-amber-50 border border-amber-200 p-3 rounded-xl text-amber-900 text-xs">
-                  <strong>Discounts & Attribution:</strong> Auto-applied promo code
+                  <strong>Discount Details:</strong> Auto-applied promo code
                   <code class="bg-amber-100 px-1 py-0.5 rounded font-mono">DZTVBXMTCVTZKH4</code> (35% OFF),
-                  attribution tag <code class="bg-amber-100 px-1 py-0.5 rounded font-mono">{{ state.activeVariant() }}</code>.
+                  Shipping and product details are included with your order.
                 </div>
               </div>
             }
@@ -191,7 +191,7 @@ import { PdpState } from '../services/pdp-state';
                     </div>
                     <h3 class="text-xl font-bold text-gray-900">Order Simulated Successfully!</h3>
                     <p class="text-sm text-gray-600 max-w-md">
-                      Order confirmation event fired into <code class="font-mono bg-gray-100 px-1 py-0.5 rounded">window.dataLayer</code>. Split-test metrics recorded this conversion for the <strong class="text-emerald-700 uppercase">{{ state.activeVariant() }}</strong> variant!
+                      Order confirmation event fired into <code class="font-mono bg-gray-100 px-1 py-0.5 rounded">window.dataLayer</code>.
                     </p>
                     <button
                       type="button"
@@ -258,8 +258,6 @@ export class ShopifyPayloadModal {
   readonly payloadString = computed(() => {
     const plan = this.state.selectedPlan();
     const isSub = this.state.isSubscription();
-    const variantType = this.state.activeVariant();
-
     const mainLineProperties: Record<string, string> = {
       _product_handle: 'metabolic-complex',
       _plan_title: plan.title,
@@ -267,7 +265,6 @@ export class ShopifyPayloadModal {
       _per_day_cost: `$${plan.perDayPrice.toFixed(2)}`,
       _dollar_savings: `$${plan.dollarSavings.toFixed(2)}`,
       _discount_code: 'DZTVBXMTCVTZKH4',
-      _split_test_variant: variantType,
       _source_url: 'https://offer.pawfy.com/pdp-fresh-mtc-b',
       _timestamp: new Date().toISOString(),
     };
@@ -333,7 +330,6 @@ export class ShopifyPayloadModal {
   simulateCheckout() {
     this.isSimulatingOrder.set(true);
     const plan = this.state.selectedPlan();
-    this.state.recordConversion(plan.discountedPrice);
     this.state.trackEvent('simulate_checkout_click', {
       plan_id: plan.id,
       amount: plan.discountedPrice,

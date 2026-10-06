@@ -1,5 +1,3 @@
-export type VariantType = 'control' | 'challenger';
-
 export interface PlanItem {
   text: string;
   callout?: {
@@ -60,23 +58,6 @@ export interface CustomerReview {
   headline?: string;
   copy: string;
   helpfulCount: number;
-}
-
-export interface SplitTestStats {
-  control: {
-    impressions: number;
-    planClicks: number;
-    atcClicks: number;
-    conversions: number;
-    revenue: number;
-  };
-  challenger: {
-    impressions: number;
-    planClicks: number;
-    atcClicks: number;
-    conversions: number;
-    revenue: number;
-  };
 }
 
 export interface PerformanceMetricReport {

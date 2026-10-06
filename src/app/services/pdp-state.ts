@@ -3,8 +3,6 @@ import {
   AnalyticsEvent,
   PlanOption,
   PRODUCT_CONFIG,
-  SplitTestStats,
-  VariantType,
 } from '../models/pdp.model';
 
 declare global {
@@ -13,28 +11,10 @@ declare global {
   }
 }
 
-const defaultStats: SplitTestStats = {
-  control: {
-    impressions: 1240,
-    planClicks: 520,
-    atcClicks: 88,
-    conversions: 42,
-    revenue: 2872.8,
-  },
-  challenger: {
-    impressions: 1265,
-    planClicks: 782,
-    atcClicks: 174,
-    conversions: 89,
-    revenue: 6087.6,
-  },
-};
-
 @Injectable({
   providedIn: 'root',
 })
 export class PdpState {
-  readonly activeVariant = signal<VariantType>('challenger');
   readonly selectedPlan = signal<PlanOption>(PRODUCT_CONFIG.plans[0]);
   readonly isSubscription = signal<boolean>(true);
   readonly activeGallerySlide = signal<number>(0);
@@ -43,12 +23,7 @@ export class PdpState {
   readonly isPayloadModalOpen = signal<boolean>(false);
   readonly isAnalyticsOpen = signal<boolean>(false);
   readonly isPerformanceReportOpen = signal<boolean>(false);
-  readonly isDevToolbarOpen = signal<boolean>(false);
   readonly showFeedingModal = signal<boolean>(false);
-
-  // Split-testing & Stats
-  readonly splitRatio = signal<number>(50); // % allocated to challenger
-  readonly splitStats = signal<SplitTestStats>(defaultStats);
 
   // Analytics event stream
   readonly analyticsLogs = signal<AnalyticsEvent[]>([]);
@@ -95,37 +70,12 @@ export class PdpState {
 
   constructor() {
     if (typeof window !== 'undefined') {
-      // Check query param override
-      const params = new URLSearchParams(window.location.search);
-      const urlVariant = params.get('variant') as VariantType | null;
-      if (urlVariant === 'challenger' || urlVariant === 'control') {
-        this.activeVariant.set(urlVariant);
-      }
-
       // Initial page view event
       this.trackEvent('page_view', {
-        variant: this.activeVariant(),
         product: 'metabolic-complex',
         url: window.location.href,
       });
-
-      this.recordImpression();
     }
-  }
-
-  setVariant(v: VariantType) {
-    this.activeVariant.set(v);
-    if (typeof window !== 'undefined') {
-      const url = new URL(window.location.href);
-      url.searchParams.set('variant', v);
-      window.history.replaceState({}, '', url.toString());
-    }
-    this.trackEvent('variant_switched_manually', { variant: v });
-  }
-
-  setSplitRatio(val: number) {
-    this.splitRatio.set(val);
-    this.trackEvent('split_ratio_updated', { ratio: val });
   }
 
   selectPlan(plan: PlanOption) {
@@ -136,14 +86,6 @@ export class PdpState {
       price: plan.discountedPrice,
       savings: plan.dollarSavings,
     });
-    const current = this.activeVariant();
-    this.splitStats.update((prev) => ({
-      ...prev,
-      [current]: {
-        ...prev[current],
-        planClicks: prev[current].planClicks + 1,
-      },
-    }));
   }
 
   setGallerySlide(idx: number) {
@@ -161,45 +103,12 @@ export class PdpState {
     this.selectedPlan.set(target);
     this.isPayloadModalOpen.set(true);
 
-    const variant = this.activeVariant();
     this.trackEvent('add_to_cart', {
       plan_id: target.id,
       quantity: target.quantity,
       price: target.discountedPrice,
-      variant,
       free_gift: target.freeGift,
     });
-
-    this.splitStats.update((prev) => ({
-      ...prev,
-      [variant]: {
-        ...prev[variant],
-        atcClicks: prev[variant].atcClicks + 1,
-      },
-    }));
-  }
-
-  recordImpression() {
-    const variant = this.activeVariant();
-    this.splitStats.update((prev) => ({
-      ...prev,
-      [variant]: {
-        ...prev[variant],
-        impressions: prev[variant].impressions + 1,
-      },
-    }));
-  }
-
-  recordConversion(amount: number) {
-    const variant = this.activeVariant();
-    this.splitStats.update((prev) => ({
-      ...prev,
-      [variant]: {
-        ...prev[variant],
-        conversions: prev[variant].conversions + 1,
-        revenue: Math.round((prev[variant].revenue + amount) * 100) / 100,
-      },
-    }));
   }
 
   trackEvent(eventName: string, properties: Record<string, unknown> = {}) {
@@ -216,7 +125,6 @@ export class PdpState {
       properties: {
         ...properties,
         url: window.location.href,
-        variant: this.activeVariant(),
         screen_width: window.innerWidth,
       },
     };

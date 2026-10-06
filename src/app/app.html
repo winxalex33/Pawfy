@@ -104,11 +104,7 @@
   <!-- Sticky ATC Button -->
   <app-sticky-atc />
 
-  <!-- Lazy/On-Demand Dev Toolbar and Inspection Modals (Deferred to save initial JS) -->
-  @defer (on idle) {
-    <app-split-testing-toolbar />
-  }
-
+  <!-- On-demand inspection modals -->
   @defer (when state.isPayloadModalOpen()) {
     <app-shopify-payload-modal />
   }

@@ -98,12 +98,12 @@ import { PerformanceMetricReport } from '../models/pdp.model';
               </table>
             </div>
 
-            <!-- Architectural Comparison: Control vs Challenger -->
+            <!-- Performance comparison -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
               <div class="bg-red-50/50 border border-red-200/80 rounded-2xl p-4">
                 <div class="font-bold text-red-900 text-sm mb-1 flex items-center gap-1.5">
                   <span>⚠️</span>
-                  <span>Control (Live Original MTC-B Issues)</span>
+                  <span>Current Storefront (Performance Issues)</span>
                 </div>
                 <ul class="list-disc pl-4 space-y-1 text-red-800/90 leading-relaxed mt-2">
                   <li>Heavy uncompressed third-party pixels blocking main thread (&gt;450ms TBT).</li>
@@ -115,7 +115,7 @@ import { PerformanceMetricReport } from '../models/pdp.model';
               <div class="bg-emerald-50/50 border border-emerald-200/80 rounded-2xl p-4">
                 <div class="font-bold text-emerald-900 text-sm mb-1 flex items-center gap-1.5">
                   <span>✓</span>
-                  <span>Challenger (Performance Fixes Built-In)</span>
+                  <span>Optimized Implementation</span>
                 </div>
                 <ul class="list-disc pl-4 space-y-1 text-emerald-900/90 leading-relaxed mt-2">
                   <li>Strict aspect-ratio containers eliminating CLS to 0.004.</li>

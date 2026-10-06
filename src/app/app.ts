@@ -20,7 +20,6 @@ import { FaqSection } from './components/faq';
 import { CustomerReviews } from './components/customer-reviews';
 import { FooterSection } from './components/footer';
 import { StickyAtc } from './components/sticky-atc';
-import { SplitTestingToolbar } from './components/split-testing-toolbar';
 import { ShopifyPayloadModal } from './components/shopify-payload-modal';
 import { AnalyticsInspector } from './components/analytics-inspector';
 import { PerformanceReportModal } from './components/performance-report-modal';
@@ -50,7 +49,6 @@ import { FeedingGuideModal } from './components/feeding-guide-modal';
     CustomerReviews,
     FooterSection,
     StickyAtc,
-    SplitTestingToolbar,
     ShopifyPayloadModal,
     AnalyticsInspector,
     PerformanceReportModal,
