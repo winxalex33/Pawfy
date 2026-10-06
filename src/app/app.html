@@ -1,0 +1,127 @@
+<div class="min-h-screen bg-white text-[#000948] font-tt-norms antialiased selection:bg-[#E2F8E6] selection:text-[#000948]">
+  <!-- 1. Above-The-Fold Critical Content (Immediate Render for instant LCP/FCP) -->
+  <app-countdown-banner />
+  <app-header />
+
+  <main class="page">
+    <app-atf />
+    <app-value-props-bar />
+
+    <!-- 2. Deferred Below-The-Fold Sections (Loaded incrementally on viewport proximity) -->
+    @defer (on viewport) {
+      <app-owner-reviews />
+    } @placeholder {
+      <div class="min-h-[480px]"></div>
+    }
+
+    @defer (on viewport) {
+      <app-weight-risks />
+    } @placeholder {
+      <div class="min-h-[450px]"></div>
+    }
+
+    @defer (on viewport) {
+      <app-as-seen-in />
+    } @placeholder {
+      <div class="min-h-[80px]"></div>
+    }
+
+    @defer (on viewport) {
+      <div class="max-w-[1440px] mx-auto px-[16px] lg:px-[30px] py-6 sm:py-10">
+        <app-dosage-calculator />
+      </div>
+    } @placeholder {
+      <div class="min-h-[300px]"></div>
+    }
+
+    @defer (on viewport) {
+      <app-ingredients />
+    } @placeholder {
+      <div class="min-h-[600px]"></div>
+    }
+
+    @defer (on viewport) {
+      <app-weekly-results />
+    } @placeholder {
+      <div class="min-h-[550px]"></div>
+    }
+
+    @defer (on viewport) {
+      <app-stats-collage />
+    } @placeholder {
+      <div class="min-h-[480px]"></div>
+    }
+
+    @defer (on viewport) {
+      <app-vet-endorsement />
+    } @placeholder {
+      <div class="min-h-[500px]"></div>
+    }
+
+    @defer (on viewport) {
+      <app-help-all-dogs />
+    } @placeholder {
+      <div class="min-h-[400px]"></div>
+    }
+
+    @defer (on viewport) {
+      <app-compare-table />
+    } @placeholder {
+      <div class="min-h-[600px]"></div>
+    }
+
+    @defer (on viewport) {
+      <app-life-changing-results />
+    } @placeholder {
+      <div class="min-h-[400px]"></div>
+    }
+
+    @defer (on viewport) {
+      <app-consistency-matters />
+    } @placeholder {
+      <div class="min-h-[450px]"></div>
+    }
+
+    @defer (on viewport) {
+      <app-faq />
+    } @placeholder {
+      <div class="min-h-[500px]"></div>
+    }
+
+    @defer (on viewport) {
+      <app-customer-reviews />
+    } @placeholder {
+      <div class="min-h-[550px]"></div>
+    }
+  </main>
+
+  @defer (on viewport) {
+    <app-footer />
+  } @placeholder {
+    <div class="min-h-[300px]"></div>
+  }
+
+  <!-- Sticky ATC Button -->
+  <app-sticky-atc />
+
+  <!-- Lazy/On-Demand Dev Toolbar and Inspection Modals (Deferred to save initial JS) -->
+  @defer (on idle) {
+    <app-split-testing-toolbar />
+  }
+
+  @defer (when state.isPayloadModalOpen()) {
+    <app-shopify-payload-modal />
+  }
+
+  @defer (when state.isAnalyticsOpen()) {
+    <app-analytics-inspector />
+  }
+
+  @defer (when state.isPerformanceReportOpen()) {
+    <app-performance-report-modal />
+  }
+
+  @defer (when state.showFeedingModal()) {
+    <app-feeding-guide-modal />
+  }
+</div>

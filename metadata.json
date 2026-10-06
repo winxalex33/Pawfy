@@ -1,0 +1,8 @@
+{
+  "name": "Pawfy Metabolic Complex - High-Performance PDP Challenger",
+  "description": "Challenger",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
