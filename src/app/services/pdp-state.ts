@@ -1,4 +1,4 @@
-import { Injectable, computed, signal } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import {
   AnalyticsEvent,
   PlanOption,
@@ -23,50 +23,9 @@ export class PdpState {
   readonly isPayloadModalOpen = signal<boolean>(false);
   readonly isAnalyticsOpen = signal<boolean>(false);
   readonly isPerformanceReportOpen = signal<boolean>(false);
-  readonly showFeedingModal = signal<boolean>(false);
 
   // Analytics event stream
   readonly analyticsLogs = signal<AnalyticsEvent[]>([]);
-
-  // Dosage Calculator state
-  readonly dogWeightLbs = signal<number>(25);
-
-  readonly dosageInfo = computed(() => {
-    const weight = this.dogWeightLbs();
-    if (weight <= 30) {
-      return {
-        chewsPerDay: 1,
-        rangeText: 'Up to 30 lbs (Small Dogs)',
-        threeTubDuration: '90 days (Full 3 Months)',
-        dailyCost: '$0.76/day',
-        sampleBreeds: 'French Bulldog, Beagle, Dachshund, Pug',
-      };
-    } else if (weight <= 60) {
-      return {
-        chewsPerDay: 2,
-        rangeText: '31 – 60 lbs (Medium Dogs)',
-        threeTubDuration: '45 days (6+ Weeks)',
-        dailyCost: '$1.52/day',
-        sampleBreeds: 'Australian Shepherd, Border Collie, Bulldog',
-      };
-    } else if (weight <= 90) {
-      return {
-        chewsPerDay: 3,
-        rangeText: '61 – 90 lbs (Large Dogs)',
-        threeTubDuration: '30 days (1 Month)',
-        dailyCost: '$2.28/day',
-        sampleBreeds: 'Golden Retriever, German Shepherd, Labrador',
-      };
-    } else {
-      return {
-        chewsPerDay: 4,
-        rangeText: '91+ lbs (Giant Breeds)',
-        threeTubDuration: '22 days',
-        dailyCost: '$3.04/day',
-        sampleBreeds: 'Great Dane, Mastiff, Newfoundland, Bernese',
-      };
-    }
-  });
 
   constructor() {
     if (typeof window !== 'undefined') {
@@ -91,11 +50,6 @@ export class PdpState {
   setGallerySlide(idx: number) {
     this.activeGallerySlide.set(idx);
     this.trackEvent('gallery_interaction', { slide_index: idx });
-  }
-
-  setDogWeight(weight: number) {
-    this.dogWeightLbs.set(weight);
-    this.trackEvent('dosage_calculator_used', { dog_weight_lbs: weight });
   }
 
   addToCart(overridePlan?: PlanOption) {

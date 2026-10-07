@@ -2,7 +2,7 @@
 
 > Pawfy product page for Metabolic Complex, a weight management chew for dogs.
 
-This site provides product information, pricing, subscription options, ingredients, dosage guidance, and customer reviews.
+This site provides product information, pricing, subscription options, ingredients, and customer reviews.
 
 ## Product information
 

@@ -38,48 +38,44 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
           </a>
         </div>
 
-        <!-- Navigation links matching live site -->
+        <!-- Navigation links matching offer.pawfy.com -->
         <nav class="header__nav flex items-center">
-          <ul class="hidden xl:flex items-center gap-1 text-[13px] font-[500] uppercase tracking-[0.1em] text-[#20254a]">
-            <li><a href="#product-atf" class="px-3 py-1.5 hover:text-[#009055] transition">SHOP</a></li>
-            <li><a href="#owner-reviews" class="px-3 py-1.5 hover:text-[#009055] transition">REVIEWS</a></li>
-            <li><a href="#faq" class="px-3 py-1.5 hover:text-[#009055] transition">FAQ</a></li>
-            <li><a href="#benefits" class="px-3 py-1.5 hover:text-[#009055] transition">OUR STORY</a></li>
-            <li><a href="#customer-reviews" class="px-3 py-1.5 hover:text-[#009055] transition">CONTACT US</a></li>
-            <li><a href="https://pawfy.com/tools/recurring/get-subscription-access" class="px-3 py-1.5 hover:text-[#009055] transition">My Subscriptions</a></li>
+          <ul class="hidden min-[1221px]:flex items-center gap-0 text-[13px] font-[500] uppercase tracking-[0.1em] text-[#20254a]">
+            <li><a href="https://pawfy.com/pages/shop" class="px-3 xl:px-4 py-2 hover:text-[#009055] transition">SHOP</a></li>
+            <li><a href="https://pawfy.com/pages/reviews" class="px-3 xl:px-4 py-2 hover:text-[#009055] transition">REVIEWS</a></li>
+            <li><a href="https://pawfy.com/pages/faq" class="px-3 xl:px-4 py-2 hover:text-[#009055] transition">FAQ</a></li>
+            <li><a href="https://pawfy.com/pages/about-us" class="px-3 xl:px-4 py-2 hover:text-[#009055] transition">OUR STORY</a></li>
+            <li><a href="https://pawfy.com/pages/contact-us" class="px-3 xl:px-4 py-2 hover:text-[#009055] transition">CONTACT US</a></li>
+            <li><a href="https://pawfy.com/tools/recurring/get-subscription-access" class="px-3 xl:px-4 py-2 hover:text-[#009055] transition">My Subscriptions</a></li>
           </ul>
 
-          <div class="flex items-center gap-3">
-            <span class="text-xs font-[500] text-[#20254a] bg-white px-2.5 py-1 rounded-full border border-[#20254a]/15 shadow-2xs hidden sm:inline-block">
-              Free US Shipping
-            </span>
-            <button
-              type="button"
-              (click)="mobileMenuOpen.set(!mobileMenuOpen())"
-              class="xl:hidden p-1.5 text-[#20254a] cursor-pointer"
-              aria-label="Toggle navigation menu"
-            >
-              <img
-                src="https://cdn.shopify.com/s/files/1/0506/0424/5166/files/menu.svg"
-                alt="Menu"
-                width="22"
-                height="22"
-                class="w-[22px] h-[22px]"
-              />
-            </button>
-          </div>
+          <!-- Mobile / tablet menu toggle (<= 1220px) without any extraneous shipping pill -->
+          <button
+            type="button"
+            (click)="mobileMenuOpen.set(!mobileMenuOpen())"
+            class="min-[1221px]:hidden p-1.5 text-[#20254a] cursor-pointer"
+            aria-label="Toggle navigation menu"
+          >
+            <img
+              src="https://cdn.shopify.com/s/files/1/0506/0424/5166/files/menu.svg"
+              alt="Menu"
+              width="22"
+              height="22"
+              class="w-[22px] h-[22px]"
+            />
+          </button>
         </nav>
       </div>
 
       <!-- Mobile dropdown -->
       @if (mobileMenuOpen()) {
-        <div class="xl:hidden bg-white border-t border-[#20254a]/10 px-5 py-4 flex flex-col gap-2.5 text-[14px] font-[500] text-[#20254a]">
-          <a (click)="mobileMenuOpen.set(false)" href="#product-atf" class="py-1 hover:text-[#009055]">SHOP</a>
-          <a (click)="mobileMenuOpen.set(false)" href="#owner-reviews" class="py-1 hover:text-[#009055]">REVIEWS</a>
-          <a (click)="mobileMenuOpen.set(false)" href="#faq" class="py-1 hover:text-[#009055]">FAQ</a>
-          <a (click)="mobileMenuOpen.set(false)" href="#benefits" class="py-1 hover:text-[#009055]">OUR STORY</a>
-          <a (click)="mobileMenuOpen.set(false)" href="#customer-reviews" class="py-1 hover:text-[#009055]">CONTACT US</a>
-          <a (click)="mobileMenuOpen.set(false)" href="https://pawfy.com/tools/recurring/get-subscription-access" class="py-1 hover:text-[#009055]">My Subscriptions</a>
+        <div class="min-[1221px]:hidden bg-white border-t border-[#20254a]/10 px-5 py-4 flex flex-col gap-2.5 text-[14px] font-[500] uppercase tracking-[0.1em] text-[#20254a]">
+          <a (click)="mobileMenuOpen.set(false)" href="https://pawfy.com/pages/shop" class="py-1 hover:text-[#009055]">SHOP</a>
+          <a (click)="mobileMenuOpen.set(false)" href="https://pawfy.com/pages/reviews" class="py-1 hover:text-[#009055]">REVIEWS</a>
+          <a (click)="mobileMenuOpen.set(false)" href="https://pawfy.com/pages/faq" class="py-1 hover:text-[#009055]">FAQ</a>
+          <a (click)="mobileMenuOpen.set(false)" href="https://pawfy.com/pages/about-us" class="py-1 hover:text-[#009055]">OUR STORY</a>
+          <a (click)="mobileMenuOpen.set(false)" href="https://pawfy.com/pages/contact-us" class="py-1 hover:text-[#009055]">CONTACT US</a>
+          <a (click)="mobileMenuOpen.set(false)" href="https://pawfy.com/tools/recurring/get-subscription-access" class="py-1 hover:text-[#009055] normal-case">My Subscriptions</a>
         </div>
       }
     </header>

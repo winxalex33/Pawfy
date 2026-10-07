@@ -489,14 +489,6 @@ import { optimizeShopifyImage } from '../utils/image';
                         </div>
                       }
                     </div>
-
-                    <button
-                      type="button"
-                      (click)="state.showFeedingModal.set(true)"
-                      class="mt-3 w-full py-2 bg-[#E2F8E6] text-[#009055] hover:bg-[#d4f2dc] font-bold text-xs uppercase tracking-wider rounded-lg transition cursor-pointer"
-                    >
-                      Open Full Veterinary Dosage Chart
-                    </button>
                   </div>
                 }
               </div>

@@ -1,6 +1,5 @@
 <div class="min-h-screen bg-white text-[#000948] font-tt-norms antialiased selection:bg-[#E2F8E6] selection:text-[#000948]">
   <!-- 1. Above-The-Fold Critical Content (Immediate Render for instant LCP/FCP) -->
-  <app-countdown-banner />
   <app-header />
 
   <main class="page">
@@ -24,14 +23,6 @@
       <app-as-seen-in />
     } @placeholder {
       <div class="min-h-[80px]"></div>
-    }
-
-    @defer (on viewport) {
-      <div class="max-w-[1440px] mx-auto px-[16px] lg:px-[30px] py-6 sm:py-10">
-        <app-dosage-calculator />
-      </div>
-    } @placeholder {
-      <div class="min-h-[300px]"></div>
     }
 
     @defer (on viewport) {
@@ -115,9 +106,5 @@
 
   @defer (when state.isPerformanceReportOpen()) {
     <app-performance-report-modal />
-  }
-
-  @defer (when state.showFeedingModal()) {
-    <app-feeding-guide-modal />
   }
 </div>

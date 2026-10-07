@@ -37,6 +37,7 @@ const mainContents = await fs.readFile(mainFile, 'utf8');
 const importPattern =
   /\b(?:import|export)\s*(?:[\w$*{},\s]*?\bfrom\s*)?["']([^"']+\.js(?:\?[^"']*)?)["']/g;
 const chunkHrefs = new Set();
+chunkHrefs.add(`${mainUrl.pathname}${mainUrl.search}`);
 
 for (const match of mainContents.matchAll(importPattern)) {
   const specifier = match[1];

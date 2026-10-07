@@ -43,8 +43,15 @@ app.post('/api/cart/add', (req, res) => {
 app.use(
   express.static(browserDistFolder, {
     maxAge: '1y',
-    index: false,
+    index: 'index.html',
     redirect: false,
+    setHeaders: (res, path) => {
+      if (path.endsWith('.html')) {
+        res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+      } else if (/\.(js|css|woff2?|ttf|png|jpe?g|webp|svg)$/.test(path)) {
+        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+      }
+    },
   }),
 );
 
