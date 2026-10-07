@@ -50,13 +50,13 @@ import { optimizeShopifyImage } from '../utils/image';
                 [alt]="'Pawfy Metabolic Complex - Image ' + (state.activeGallerySlide() + 1)"
                 [src]="getMainHero(galleryImages[state.activeGallerySlide()])"
                 [srcset]="getMainHeroSrcset(galleryImages[state.activeGallerySlide()])"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 480px, 581px"
-                width="581"
-                height="581"
+                sizes="(max-width: 480px) 308px, (max-width: 768px) calc(100vw - 102px), (max-width: 1024px) 540px, 581px"
+                width="308"
+                height="308"
                 [attr.fetchpriority]="state.activeGallerySlide() === 0 ? 'high' : 'auto'"
                 [attr.loading]="state.activeGallerySlide() === 0 ? 'eager' : 'lazy'"
                 decoding="async"
-                class="w-full h-auto object-cover max-h-[610px] rounded-[12px]"
+                class="w-full h-auto object-cover max-h-[610px] rounded-[12px] aspect-square"
               />
 
               <!-- Prev Arrow Button -->
@@ -581,11 +581,11 @@ export class AtfSection {
   }
 
   getMainHero(src: string): string {
-    return optimizeShopifyImage(src, 581);
+    return optimizeShopifyImage(src, 308);
   }
 
   getMainHeroSrcset(src: string): string {
-    return `${optimizeShopifyImage(src, 360)} 360w, ${optimizeShopifyImage(src, 480)} 480w, ${optimizeShopifyImage(src, 540)} 540w, ${optimizeShopifyImage(src, 581)} 581w`;
+    return `${optimizeShopifyImage(src, 308)} 308w, ${optimizeShopifyImage(src, 360)} 360w, ${optimizeShopifyImage(src, 480)} 480w, ${optimizeShopifyImage(src, 540)} 540w, ${optimizeShopifyImage(src, 581)} 581w`;
   }
 
   prevSlide() {

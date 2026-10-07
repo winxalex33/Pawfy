@@ -91,13 +91,13 @@ export const PRODUCT_CONFIG = {
     'NASC Certified Member'
   ],
   galleryImages: [
-    'https://cdn.shopify.com/s/files/1/0506/0424/5166/files/V5.jpg?v=1790790518&width=581',
-    'https://cdn.shopify.com/s/files/1/0506/0424/5166/files/Dental-Wash-Gift-Slide.jpg?v=1790790518&width=581',
-    'https://cdn.shopify.com/s/files/1/0506/0424/5166/files/Slide_2_1.png?v=1785180017&width=581',
-    'https://cdn.shopify.com/s/files/1/0506/0424/5166/files/Image_4_5_1.png?v=1784659753&width=581',
-    'https://cdn.shopify.com/s/files/1/0506/0424/5166/files/Image_5_1.png?v=1784312125&width=581',
-    'https://cdn.shopify.com/s/files/1/0506/0424/5166/files/Image_6_1.png?v=1784312125&width=581',
-    'https://cdn.shopify.com/s/files/1/0506/0424/5166/files/Image_7_2_1.png?v=1784653125&width=581'
+    'https://cdn.shopify.com/s/files/1/0506/0424/5166/files/V5.jpg?v=1790790518&width=308',
+    'https://cdn.shopify.com/s/files/1/0506/0424/5166/files/Dental-Wash-Gift-Slide.jpg?v=1790790518&width=308',
+    'https://cdn.shopify.com/s/files/1/0506/0424/5166/files/Slide_2_1.png?v=1785180017&width=308',
+    'https://cdn.shopify.com/s/files/1/0506/0424/5166/files/Image_4_5_1.png?v=1784659753&width=308',
+    'https://cdn.shopify.com/s/files/1/0506/0424/5166/files/Image_5_1.png?v=1784312125&width=308',
+    'https://cdn.shopify.com/s/files/1/0506/0424/5166/files/Image_6_1.png?v=1784312125&width=308',
+    'https://cdn.shopify.com/s/files/1/0506/0424/5166/files/Image_7_2_1.png?v=1784653125&width=308'
   ],
   plans: [
     {
