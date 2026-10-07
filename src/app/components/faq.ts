@@ -53,7 +53,7 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
                         height="20"
                         viewBox="0 0 38 38"
                         fill="none"
-                        class="h-[18px] w-[18px] lg:h-[20px] lg:w-[20px] transition-transform duration-300 ease-in-out"
+                        class="h-[18px] w-[18px] lg:h-[20px] lg:w-[20px] transition-transform duration-350 ease-in-out origin-center"
                         [class.-rotate-90]="openIndex() === idx"
                         [class.rotate-90]="openIndex() !== idx"
                       >
@@ -65,18 +65,23 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
                     </span>
                   </button>
 
-                  @if (openIndex() === idx) {
-                    <div class="mt-[14px] mb-[6px] animate-fadeIn">
-                      <div class="font-[400] text-[13px] lg:text-[15px] text-[#000948]/90 font-sans leading-[160%]">
-                        {{ faq.answer }}
-                      </div>
-                      @if (faq.details) {
-                        <div class="font-[400] text-[13px] lg:text-[15px] text-[#000948]/90 font-sans leading-[160%] mt-2">
-                          {{ faq.details }}
+                  <div
+                    class="faq-accordion-content"
+                    [class.is-open]="openIndex() === idx"
+                  >
+                    <div class="faq-accordion-inner">
+                      <div class="pt-[14px] pb-[6px]">
+                        <div class="font-[400] text-[13px] lg:text-[15px] text-[#000948]/90 font-sans leading-[160%]">
+                          {{ faq.answer }}
                         </div>
-                      }
+                        @if (faq.details) {
+                          <div class="font-[400] text-[13px] lg:text-[15px] text-[#000948]/90 font-sans leading-[160%] mt-2">
+                            {{ faq.details }}
+                          </div>
+                        }
+                      </div>
                     </div>
-                  }
+                  </div>
                 </div>
               }
             </div>
