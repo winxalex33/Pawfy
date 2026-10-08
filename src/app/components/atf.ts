@@ -46,18 +46,39 @@ import { optimizeShopifyImage } from '../utils/image';
 
             <!-- 2. Main Hero Image Frame with Prev/Next Navigation -->
             <div class="relative flex-1 bg-[#FBF9F5] rounded-[12px] border border-[#000948]/10 overflow-hidden shadow-xs">
-              <img
-                [alt]="'Pawfy Metabolic Complex - Image ' + (state.activeGallerySlide() + 1)"
-                [src]="getMainHero(galleryImages[state.activeGallerySlide()])"
-                [srcset]="getMainHeroSrcset(galleryImages[state.activeGallerySlide()])"
-                sizes="(max-width: 480px) 308px, (max-width: 768px) calc(100vw - 102px), (max-width: 1024px) 540px, 581px"
-                width="308"
-                height="308"
-                [attr.fetchpriority]="state.activeGallerySlide() === 0 ? 'high' : 'auto'"
-                [attr.loading]="state.activeGallerySlide() === 0 ? 'eager' : 'lazy'"
-                decoding="async"
-                class="w-full h-auto object-cover max-h-[610px] rounded-[12px] aspect-square"
-              />
+              <picture class="block w-full h-full">
+                <!-- Mobile: width=308 for small/mobile devices to eliminate wasted bytes -->
+                <source
+                  media="(max-width: 640px)"
+                  [srcset]="getHeroMobile(galleryImages[state.activeGallerySlide()])"
+                  width="308"
+                  height="308"
+                />
+                <!-- Tablet: width=480 -->
+                <source
+                  media="(max-width: 1024px)"
+                  [srcset]="getHeroTablet(galleryImages[state.activeGallerySlide()])"
+                  width="480"
+                  height="480"
+                />
+                <!-- Desktop: width=581 -->
+                <source
+                  media="(min-width: 1025px)"
+                  [srcset]="getHeroDesktop(galleryImages[state.activeGallerySlide()])"
+                  width="581"
+                  height="581"
+                />
+                <img
+                  [alt]="'Pawfy Metabolic Complex - Image ' + (state.activeGallerySlide() + 1)"
+                  [src]="getMainHero(galleryImages[state.activeGallerySlide()])"
+                  width="308"
+                  height="308"
+                  [attr.fetchpriority]="state.activeGallerySlide() === 0 ? 'high' : 'auto'"
+                  [attr.loading]="state.activeGallerySlide() === 0 ? 'eager' : 'lazy'"
+                  decoding="async"
+                  class="w-full h-auto object-cover max-h-[610px] rounded-[12px] aspect-square"
+                />
+              </picture>
 
               <!-- Prev Arrow Button -->
               <button
@@ -578,6 +599,18 @@ export class AtfSection {
 
   getThumbnail(src: string): string {
     return optimizeShopifyImage(src, 96);
+  }
+
+  getHeroMobile(src: string): string {
+    return optimizeShopifyImage(src, 308);
+  }
+
+  getHeroTablet(src: string): string {
+    return optimizeShopifyImage(src, 480);
+  }
+
+  getHeroDesktop(src: string): string {
+    return optimizeShopifyImage(src, 581);
   }
 
   getMainHero(src: string): string {

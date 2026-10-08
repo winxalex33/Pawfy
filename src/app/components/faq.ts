@@ -53,7 +53,7 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
                         height="20"
                         viewBox="0 0 38 38"
                         fill="none"
-                        class="h-[18px] w-[18px] lg:h-[20px] lg:w-[20px] transition-transform duration-350 ease-in-out origin-center"
+                        class="h-[18px] w-[18px] lg:h-[20px] lg:w-[20px] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] origin-center"
                         [class.-rotate-90]="openIndex() === idx"
                         [class.rotate-90]="openIndex() !== idx"
                       >
