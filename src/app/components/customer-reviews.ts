@@ -70,16 +70,16 @@ import { PdpState } from '../services/pdp-state';
               <div>
                 <div class="flex items-center justify-between mb-3">
                   <div class="flex items-center gap-1.5">
-                    <span class="text-[11px] font-[600] text-[#009055] bg-[#E2F8E6] px-2 py-0.5 rounded-[4px] flex items-center gap-1">
+                    <span class="text-[11px] font-[600] text-[#0E5B23] bg-[#E2F8E6] px-2 py-0.5 rounded-[4px] flex items-center gap-1">
                       <span>✓</span> VERIFIED PURCHASE
                     </span>
                   </div>
-                  <span class="text-[12px] text-[#000948]/50 font-mono">{{ r.date }}</span>
+                  <span class="text-[12px] text-[#000948]/70 font-mono">{{ r.date }}</span>
                 </div>
 
                 <div class="flex items-center gap-2 mb-3">
                   <span class="font-[700] text-[15px] text-[#000948]">{{ r.author }}</span>
-                  <div class="text-[#009055] text-sm tracking-wider">
+                  <div class="text-[#00703C] text-sm tracking-wider">
                     @for (s of getStarArray(r.rating); track $index) {
                       ★
                     }
@@ -97,12 +97,12 @@ import { PdpState } from '../services/pdp-state';
                 </p>
               </div>
 
-              <div class="pt-3 mt-3 border-t border-[#000948]/10 flex items-center justify-between text-xs text-[#000948]/60">
+              <div class="pt-3 mt-3 border-t border-[#000948]/10 flex items-center justify-between text-xs text-[#000948]/75">
                 <span>Helpful to you?</span>
                 <button
                   type="button"
                   (click)="markHelpful(r.id)"
-                  class="font-semibold text-[#009055] hover:underline cursor-pointer"
+                  class="font-semibold text-[#00703C] hover:underline cursor-pointer"
                 >
                   👍 Yes ({{ r.helpfulCount }})
                 </button>

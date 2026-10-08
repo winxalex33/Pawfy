@@ -187,19 +187,19 @@ import { optimizeShopifyImage } from '../utils/image';
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 21 21" fill="none" class="shrink-0">
                 <path d="M17.5 5.25L7.875 14.875L3.5 10.5" stroke="#000948" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
-              <span class="font-[500] text-[#009055]">Made in the USA</span>
+              <span class="font-[500] text-[#00703C]">Made in the USA</span>
             </li>
             <li class="flex gap-[6px] items-center text-[14px] lg:text-[15px]">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 21 21" fill="none" class="shrink-0">
                 <path d="M17.5 5.25L7.875 14.875L3.5 10.5" stroke="#000948" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
-              <span class="font-[500] text-[#009055]">GMO, Hormone &amp; Antibiotic-free</span>
+              <span class="font-[500] text-[#00703C]">GMO, Hormone &amp; Antibiotic-free</span>
             </li>
             <li class="flex gap-[6px] items-center text-[14px] lg:text-[15px]">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 21 21" fill="none" class="shrink-0">
                 <path d="M17.5 5.25L7.875 14.875L3.5 10.5" stroke="#000948" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
-              <span class="font-[500] text-[#009055]">3rd Party Lab Tested</span>
+              <span class="font-[500] text-[#00703C]">3rd Party Lab Tested</span>
             </li>
           </ul>
 
@@ -246,7 +246,7 @@ import { optimizeShopifyImage } from '../utils/image';
                   <div class="pt-[12px] mt-[12px]">
                     <div class="relative mb-[16px] pt-[2px]">
                       <div class="border-t border-[#000948]"></div>
-                      <span class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0E9F6E] px-[14px] py-[5px] text-center text-[11px] lg:text-[12px] font-[500] uppercase text-white shadow-xs whitespace-nowrap">
+                      <span class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#036445] px-[14px] py-[5px] text-center text-[11px] lg:text-[12px] font-[500] uppercase text-white shadow-xs whitespace-nowrap">
                         SAVE 35% + FREE GIFT
                       </span>
                     </div>
@@ -264,7 +264,7 @@ import { optimizeShopifyImage } from '../utils/image';
                           <span>90 Days of Metabolic Complex</span>
                         </span>
                         <span class="shrink-0 text-right">
-                          <span class="text-[rgba(0,9,72,0.45)] line-through mr-[6px]">$105.00</span>
+                          <span class="text-[#4F5472] line-through mr-[6px]">$105.00</span>
                           <span class="text-[#000948] font-[700]">$68.40</span>
                         </span>
                       </li>
@@ -276,7 +276,7 @@ import { optimizeShopifyImage } from '../utils/image';
                           <span>FREE Dental Wash</span>
                         </span>
                         <span class="shrink-0 text-right">
-                          <span class="text-[rgba(0,9,72,0.45)] line-through mr-[6px]">$25.00</span>
+                          <span class="text-[#4F5472] line-through mr-[6px]">$25.00</span>
                           <span class="text-[#000948] font-[700]">Free</span>
                         </span>
                       </li>
@@ -288,7 +288,7 @@ import { optimizeShopifyImage } from '../utils/image';
                           <span>Fast Shipping</span>
                         </span>
                         <span class="shrink-0 text-right">
-                          <span class="text-[rgba(0,9,72,0.45)] line-through mr-[6px]">$4.99</span>
+                          <span class="text-[#4F5472] line-through mr-[6px]">$4.99</span>
                           <span class="text-[#000948] font-[700]">Free</span>
                         </span>
                       </li>
@@ -332,7 +332,7 @@ import { optimizeShopifyImage } from '../utils/image';
                     </span>
                   </div>
                   <div class="text-right">
-                    <span class="text-[rgba(0,9,72,0.45)] line-through text-[12px] mr-[6px]">$35.00</span>
+                    <span class="text-[#4F5472] line-through text-[12px] mr-[6px]">$35.00</span>
                     <span class="font-[700] text-[15px] lg:text-[16px] text-[#000948]">$22.80</span>
                   </div>
                 </div>
@@ -353,8 +353,8 @@ import { optimizeShopifyImage } from '../utils/image';
 
             <!-- In Stock Shipping Text -->
             <div class="my-[10px] mt-[15px] text-center">
-              <p class="font-[400] text-[13px] text-[#009055] leading-[145%]">
-                ✓ In stock. Shipping by: <strong class="text-[#2D887D] pl-[2px]">6 Oct - 8 Oct</strong>
+              <p class="font-[400] text-[13px] text-[#00703C] leading-[145%]">
+                ✓ In stock. Shipping by: <strong class="text-[#0D5B52] pl-[2px]">6 Oct - 8 Oct</strong>
               </p>
             </div>
 
@@ -443,16 +443,16 @@ import { optimizeShopifyImage } from '../utils/image';
                         loading="lazy"
                         class="h-[47px] w-[47px] rounded-full object-cover border border-[#00905540]"
                       />
-                      <div class="py-[4px] px-[8px] bg-[#E2F8E6] rounded-[6px] border border-[rgba(0,144,85,0.25)] flex items-center justify-center">
+                      <div class="py-[4px] px-[8px] bg-[#E2F8E6] rounded-[6px] border border-[#0E5B23]/25 flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                           <path
                             fill-rule="evenodd"
                             clip-rule="evenodd"
                             d="M8.00065 1.33325C4.31875 1.33325 1.33398 4.31802 1.33398 7.99992C1.33398 11.6818 4.31875 14.6666 8.00065 14.6666C11.6825 14.6666 14.6673 11.6818 14.6673 7.99992C14.6673 4.31802 11.6825 1.33325 8.00065 1.33325ZM10.3876 6.64987C10.5625 6.43615 10.531 6.12114 10.3173 5.94627C10.1035 5.77141 9.78854 5.80291 9.61367 6.01663L6.96353 9.25569L6.02087 8.31303C5.82561 8.11777 5.50903 8.11777 5.31376 8.31303C5.1185 8.50829 5.1185 8.82488 5.31376 9.02014L6.6471 10.3535C6.74699 10.4534 6.88447 10.5063 7.02556 10.4993C7.16665 10.4923 7.29818 10.4259 7.38763 10.3165L10.3876 6.64987Z"
-                            fill="#009055"
+                            fill="#0E5B23"
                           />
                         </svg>
-                        <p class="pl-[7px] text-[9px] lg:text-[13px] font-[400] leading-[130%] text-[#42A754]">
+                        <p class="pl-[7px] text-[9px] lg:text-[13px] font-[500] leading-[130%] text-[#0E5B23]">
                           Endorsed by Dr. Daisy May | DVM
                         </p>
                       </div>

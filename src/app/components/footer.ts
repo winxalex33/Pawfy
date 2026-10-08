@@ -68,7 +68,7 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
               Get 10% off your first order
             </h4>
             @if (subscribed()) {
-              <p class="text-[13px] text-[#009055] font-[500]">
+              <p class="text-[13px] text-[#34D399] font-[500]">
                 ✓ Thank you for subscribing!
               </p>
             } @else {

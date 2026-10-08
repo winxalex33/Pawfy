@@ -44,17 +44,17 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
                 <!-- Verified Purchase + Date -->
                 <div class="flex items-center justify-between gap-[16px] mb-[15px]">
                   <div class="flex items-center gap-[6px] bg-[#F4ECEA] rounded-[6px] py-[4px] px-[8px]">
-                    <span class="flex h-[13px] w-[13px] shrink-0 items-center justify-center rounded-full text-[#009055]">
+                    <span class="flex h-[13px] w-[13px] shrink-0 items-center justify-center rounded-full text-[#00703C]">
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" fill="none">
                         <path
                           fill-rule="evenodd"
                           clip-rule="evenodd"
                           d="M8 1.333C4.319 1.333 1.334 4.318 1.334 8s2.985 6.667 6.666 6.667 6.667-2.985 6.667-6.667-2.985-6.667-6.667-6.667zm2.388 5.317a.667.667 0 0 0-.962-.054L6.964 9.256l-.943-.943a.667.667 0 1 0-.943.943l1.333 1.334c.1.1.238.153.379.146a.668.668 0 0 0 .362-.183l3-3.666c.175-.214.144-.529-.072-.704z"
-                          fill="#009055"
+                          fill="#00703C"
                         />
                       </svg>
                     </span>
-                    <span class="text-[11px] font-[500] uppercase tracking-[0.06em] text-[#009055]">
+                    <span class="text-[11px] font-[600] uppercase tracking-[0.06em] text-[#00703C]">
                       Verified Purchase
                     </span>
                   </div>
